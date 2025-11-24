@@ -6,6 +6,8 @@
   "scripts": {
     "build": "remix vite:build",
     "dev": "remix vite:dev",
+    "start": "remix-serve build",
+    "preview": "remix vite:preview",
     "typecheck": "tsc"
   },
   "dependencies": {
