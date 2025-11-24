@@ -1,7 +1,7 @@
 // app/routes/_edge.tsx
 import type { MetaFunction } from "@vercel/remix";
 
-export const config = { runtime: "edge" as const };
+export const config = { runtime: "nodejs" };
 
 export const meta: MetaFunction = () => [
   { title: "Remix@Edge · Forgeon playground" },

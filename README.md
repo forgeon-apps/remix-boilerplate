@@ -1,24 +1,24 @@
 # Remix
 
-This directory is a brief example of a [Remix](https://remix.run/docs) site that can be deployed to Vercel with zero configuration.
+This directory is a brief example of a [Remix](https://remix.run/docs) site that can be deployed to Forgeon with zero configuration.
 
 To get started, run the Remix cli with this template
 
 ```sh
-npx create-remix@latest --template vercel/vercel/examples/remix
+npx create-remix@latest --template forgeon/forgeon/examples/remix
 ```
 
 ## Deploy Your Own
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/framework-boilerplates/remix&template=remix)
+[![Deploy with Forgeon](https://forgeon.io/button)](https://forgeon.io/new/clone?repository-url=https://github.com/forgeon/examples/tree/main/framework-boilerplates/remix&template=remix)
 
-_Live Example: https://remix-run-template.vercel.app_
+_Live Example: https://remix-run-template.forgeon.app_
 
-You can also deploy using the [Vercel CLI](https://vercel.com/docs/cli):
+You can also deploy using the [Forgeon CLI](https://forgeon.io/docs/cli):
 
 ```sh
-npm i -g vercel
-vercel
+npm i -g forgeon
+forgeon
 ```
 
 ## Development

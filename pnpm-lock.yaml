@@ -11,6 +11,9 @@ dependencies:
   '@remix-run/react':
     specifier: 2.10.0
     version: 2.10.0(react-dom@18.3.1)(react@18.3.1)(typescript@5.9.3)
+  '@remix-run/serve':
+    specifier: 2.10.0
+    version: 2.10.0(typescript@5.9.3)
   '@remix-run/server-runtime':
     specifier: 2.10.0
     version: 2.10.0(typescript@5.9.3)
@@ -33,7 +36,7 @@ dependencies:
 devDependencies:
   '@remix-run/dev':
     specifier: 2.10.0
-    version: 2.10.0(@remix-run/react@2.10.0)(typescript@5.9.3)(vite@5.4.21)
+    version: 2.10.0(@remix-run/react@2.10.0)(@remix-run/serve@2.10.0)(typescript@5.9.3)(vite@5.4.21)
   '@remix-run/eslint-config':
     specifier: 2.10.0
     version: 2.10.0(eslint@8.57.1)(react@18.3.1)(typescript@5.9.3)
@@ -1005,7 +1008,7 @@ packages:
     requiresBuild: true
     optional: true
 
-  /@remix-run/dev@2.10.0(@remix-run/react@2.10.0)(typescript@5.9.3)(vite@5.4.21):
+  /@remix-run/dev@2.10.0(@remix-run/react@2.10.0)(@remix-run/serve@2.10.0)(typescript@5.9.3)(vite@5.4.21):
     resolution: {integrity: sha512-GZE4Rck6/1Q16/QtRSq1SyfVf6KhUvJqHZoTmAl56xRVscyA1alDugXVHihwd0YuoaS6/vZ3Rb4eI5roWVrExw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
@@ -1038,6 +1041,7 @@ packages:
       '@remix-run/node': 2.10.0(typescript@5.9.3)
       '@remix-run/react': 2.10.0(react-dom@18.3.1)(react@18.3.1)(typescript@5.9.3)
       '@remix-run/router': 1.17.0
+      '@remix-run/serve': 2.10.0(typescript@5.9.3)
       '@remix-run/server-runtime': 2.10.0(typescript@5.9.3)
       '@types/mdx': 2.0.13
       '@vanilla-extract/integration': 6.5.0
@@ -1135,6 +1139,20 @@ packages:
       - supports-color
     dev: true
 
+  /@remix-run/express@2.10.0(express@4.21.2)(typescript@5.9.3):
+    resolution: {integrity: sha512-xmHxumbglfbCVJa9a9dMDtOD408DYH27LAHuGfEAPPSf5sc9WMEFBItNxp3bJZ2W2NDeava+h+7BIeR5wNpgxw==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      express: ^4.19.2
+      typescript: ^5.1.0
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+    dependencies:
+      '@remix-run/node': 2.10.0(typescript@5.9.3)
+      express: 4.21.2
+      typescript: 5.9.3
+
   /@remix-run/node@2.10.0(typescript@5.9.3):
     resolution: {integrity: sha512-hFBt431leCEoN84kVj6BExv60+3KHFORTU2t24igJNtXPNCHH/pujMMKYaSrS3a5oKDTwwqbCmSztTyyr7uFLA==}
     engines: {node: '>=18.0.0'}
@@ -1176,6 +1194,23 @@ packages:
   /@remix-run/router@1.17.0:
     resolution: {integrity: sha512-2D6XaHEVvkCn682XBnipbJjgZUU7xjLtA4dGJRBVUKpEaDYOZMENZoZjAOSb7qirxt5RupjzZxz4fK2FO+EFPw==}
     engines: {node: '>=14.0.0'}
+
+  /@remix-run/serve@2.10.0(typescript@5.9.3):
+    resolution: {integrity: sha512-JOF2x8HwXo4G5hOqKEUEG7Xm2ZYYL0kZJcWdJVIQxaRN/EmbmJCKGLcW21rZ6VZ/FqpEkSnwmiGFoDkPQ9q6lg==}
+    engines: {node: '>=18.0.0'}
+    hasBin: true
+    dependencies:
+      '@remix-run/express': 2.10.0(express@4.21.2)(typescript@5.9.3)
+      '@remix-run/node': 2.10.0(typescript@5.9.3)
+      chokidar: 3.6.0
+      compression: 1.8.1
+      express: 4.21.2
+      get-port: 5.1.1
+      morgan: 1.10.1
+      source-map-support: 0.5.21
+    transitivePeerDependencies:
+      - supports-color
+      - typescript
 
   /@remix-run/server-runtime@2.10.0(typescript@5.9.3):
     resolution: {integrity: sha512-lwgMq3m8U+oz0ZmgOrQeAE3tf6g1LPf2+ff3lgb5xb4bx7bV5VGGwKkzRK4+0fDguHXcW+YcppvdYdnKzQn1YQ==}
@@ -1885,7 +1920,7 @@ packages:
       react: '*'
       react-dom: '*'
     dependencies:
-      '@remix-run/dev': 2.10.0(@remix-run/react@2.10.0)(typescript@5.9.3)(vite@5.4.21)
+      '@remix-run/dev': 2.10.0(@remix-run/react@2.10.0)(@remix-run/serve@2.10.0)(typescript@5.9.3)(vite@5.4.21)
       '@remix-run/node': 2.10.0(typescript@5.9.3)
       '@remix-run/server-runtime': 2.10.0(typescript@5.9.3)
       '@vercel/static-config': 3.0.0
@@ -2149,6 +2184,12 @@ packages:
     resolution: {integrity: sha512-aTUKW4ptQhS64+v2d6IkPzymEzzhw+G0bA1g3uBRV3+ntkH+svttKseW5IOR4Ed6NUVKqnY7qT3dKvzQ7io4AA==}
     hasBin: true
 
+  /basic-auth@2.0.1:
+    resolution: {integrity: sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      safe-buffer: 5.1.2
+
   /binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
@@ -2353,6 +2394,26 @@ packages:
 
   /comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
+
+  /compressible@2.0.18:
+    resolution: {integrity: sha512-AF3r7P5dWxL8MxyITRMlORQNaOA2IkAFaTr4k7BUumjPtRpGDTZpl0Pb1XCO6JeDCBdp126Cgs9sMxqSjgYyRg==}
+    engines: {node: '>= 0.6'}
+    dependencies:
+      mime-db: 1.52.0
+
+  /compression@1.8.1:
+    resolution: {integrity: sha512-9mAqGPHLakhCLeNyxPkK4xVo746zQ/czLH1Ky+vkitMnWfWZps8r0qXuwhwizagCRttsL4lfG4pIOvaWLpAP0w==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      bytes: 3.1.2
+      compressible: 2.0.18
+      debug: 2.6.9
+      negotiator: 0.6.4
+      on-headers: 1.1.0
+      safe-buffer: 5.2.1
+      vary: 1.1.2
+    transitivePeerDependencies:
+      - supports-color
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
@@ -4765,6 +4826,18 @@ packages:
   /modern-ahocorasick@1.1.0:
     resolution: {integrity: sha512-sEKPVl2rM+MNVkGQt3ChdmD8YsigmXdn5NifZn6jiwn9LRJpWm8F3guhaqrJT/JOat6pwpbXEk6kv+b9DMIjsQ==}
 
+  /morgan@1.10.1:
+    resolution: {integrity: sha512-223dMRJtI/l25dJKWpgij2cMtywuG/WiUKXdvwfbhGKBhy1puASqXwFzmWZ7+K73vUPoR7SS2Qz2cI/g9MKw0A==}
+    engines: {node: '>= 0.8.0'}
+    dependencies:
+      basic-auth: 2.0.1
+      debug: 2.6.9
+      depd: 2.0.0
+      on-finished: 2.3.0
+      on-headers: 1.1.0
+    transitivePeerDependencies:
+      - supports-color
+
   /mri@1.2.0:
     resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
     engines: {node: '>=4'}
@@ -4800,6 +4873,10 @@ packages:
 
   /negotiator@0.6.3:
     resolution: {integrity: sha512-+EUsqGPLsM+j/zdChZjsnX51g4XrHFOIXwfnCVPGlQk/k5giakcKsuxCObBRu6DSm9opw/O6slWbJdghQM4bBg==}
+    engines: {node: '>= 0.6'}
+
+  /negotiator@0.6.4:
+    resolution: {integrity: sha512-myRT3DiWPHqho5PrJaIRyaMv2kgYf0mUVgBNOYMuCH5Ki1yEiQaf/ZJuQ62nvpc44wL5WDbTX7yGJi1Neevw8w==}
     engines: {node: '>= 0.6'}
 
   /node-releases@2.0.27:
@@ -4925,11 +5002,21 @@ packages:
       es-object-atoms: 1.1.1
     dev: true
 
+  /on-finished@2.3.0:
+    resolution: {integrity: sha512-ikqdkGAAyf/X/gPhXGvfgAytDZtDbr+bkNUJ0N9h5MI/dmdgCs3l6hoHrcUv41sRKew3jIwrp4qQDXiK99Utww==}
+    engines: {node: '>= 0.8'}
+    dependencies:
+      ee-first: 1.1.1
+
   /on-finished@2.4.1:
     resolution: {integrity: sha512-oVlzkg3ENAhCk2zdv7IJwd/QUD4z2RxRwpkcGY8psCVcCYZNq4wYnVWALHM+brtuJjePWiYF/ClmuDr8Ch5+kg==}
     engines: {node: '>= 0.8'}
     dependencies:
       ee-first: 1.1.1
+
+  /on-headers@1.1.0:
+    resolution: {integrity: sha512-737ZY3yNnXy37FHkQxPzt4UZ2UWPWiCZWLvFZ4fu5cueciegX0zGPnrlY6bwRg4FdQOe9YU8MkmJwGhoMybl8A==}
+    engines: {node: '>= 0.8'}
 
   /once@1.4.0:
     resolution: {integrity: sha512-lNaJgI+2Q5URQBkccEKHTQOPaXdUxnZZElQTZY0MFUAuaEqe1E+Nyvgdz/aIyNi6Z9MzO5dv1H8n58/GELp3+w==}
