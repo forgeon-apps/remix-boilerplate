@@ -10,7 +10,12 @@ npx create-remix@latest --template forgeon/forgeon/examples/remix
 
 ## Deploy Your Own
 
-[![Deploy with Forgeon](https://forgeon.io/button)](https://forgeon.io/new/clone?repository-url=https://github.com/forgeon/examples/tree/main/framework-boilerplates/remix&template=remix)
+Deploy your own Remix project with Forgeon.
+
+Deploy the example using [Forgeon](https://forgeon.io?utm_source=github&utm_medium=readme&utm_campaign=forgeon-examples):
+
+[![Deploy with Forgeon](https://forgeon.io/images/button-deploy/png/deploy-to-forgeon-6.png)](https://forgeon.io/projects?import=1&no_upload=1&auto=0&git_url=https%3A%2F%2Fgithub.com%2Fforgeon-apps%2Fremix-boilerplate)
+
 
 _Live Example: https://remix-run-template.forgeon.app_
 
